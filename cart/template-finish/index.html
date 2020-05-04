@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto:300,400&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <section class="section section-catalog">
+      <div class="container">
+        <header class="section__header">
+          <h2 class="page-title">Каталог</h2>
+        </header>
+        <div class="catalog js-catalog">
+          <div class="catalog__item" data-category="burgery">
+            <div class="product catalog__product js-product" data-product-name="Бургер" data-product-price="220" data-product-src="img/burger.png">
+              <img class="product__img" src="img/burger.png">
+              <div class="product__content">
+                <h3 class="product__title">Бургер</h3>
+                <div class="product__description">
+                  <p>Картофель и морковь, огурцы маринованные, моцарелла, цыпленок, ветчина и французский соус</p>
+                </div>
+              </div>
+              <footer class="product__footer">
+                <div class="product__bottom">
+                  <div class="product__price">
+                    <span class="product__price-value js-product-price-value">220</span>
+                    <span class="product__currency">₽</span>
+                  </div>
+                  <button class="btn product__btn js-btn-add-to-cart" type="button" data-popup="popup-order">Выбрать</button>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="catalog__item" data-category="napitki">
+            <div class="product catalog__product js-product" data-product-name="Сок" data-product-price="50" data-product-attribute="Маленький" data-product-src="img/bottle.png">
+              <img class="product__img" src="img/bottle.png">
+              <div class="product__content">
+                <h3 class="product__title">Сок</h3>
+                <div class="product__description">
+                  <p>Апельсиновый сок</p>
+                </div>
+              </div>
+              <footer class="product__footer">
+                <div class="product__sizes">
+                  <button data-product-attribute-price="50" data-product-attribute-value="Маленький" class="product__size js-btn-product-attribute is-active" type="button">Маленький</button>
+                  <button data-product-attribute-price="80" data-product-attribute-value="Большой" class="product__size js-btn-product-attribute" type="button">Большой</button>
+                </div>
+                <div class="product__bottom">
+                  <div class="product__price">
+                    <span class="product__price-value js-product-price-value">50</span>
+                    <span class="product__currency">₽</span>
+                  </div>
+                  <button class="btn product__btn js-btn-add-to-cart" type="button" data-popup="popup-order">Выбрать</button>
+                </div>
+              </footer>
+            </div>
+          </div>
+          <div class="catalog__item">
+            <div class="product catalog__product js-product" data-product-name="Мясная" data-product-price="990" data-product-attribute="25 см" data-product-src="img/pizza.png">
+              <img class="product__img" src="img/pizza.png">
+              <div class="product__content">
+                <h3 class="product__title">Мясная</h3>
+                <div class="product__description">
+                  <p>Курица, говядина, сливочный соус, салями, огурцы маринованные, томаты, грибы, бекон</p>
+                </div>
+              </div>
+              <footer class="product__footer">
+                <div class="product__sizes">
+                  <button data-product-attribute-price="950" data-product-attribute-value="25 см" class="product__size js-btn-product-attribute is-active" type="button">25 см</button>
+                  <button data-product-attribute-price="1200" data-product-attribute-value="30 см" class="product__size js-btn-product-attribute" type="button">30 см</button>
+                  <button data-product-attribute-price="1400" data-product-attribute-value="35 см" class="product__size js-btn-product-attribute" type="button">35 см</button>
+                </div>
+                <div class="product__bottom">
+                  <div class="product__price">
+                    <span class="product__price-value js-product-price-value">950</span>
+                    <span class="product__currency">₽</span>
+                  </div>
+                  <button class="btn product__btn js-btn-add-to-cart" type="button" data-popup="popup-order">Выбрать</button>
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <!-- /.catalog -->
+      </div>
+    </section><!-- /.section-catalog -->
+
+    <section class="section section-cart">
+      <div class="container section-cart__container">
+        <h2 class="page-title">Корзина</h2>
+        <div class="cart js-cart-wrapper">
+          <form class="form cart__form">
+            <div class="cart__items js-cart">
+            </div>
+            <div class="cart__totals">
+              <div>Всего элементов: <span class="js-cart-total-count-items cart__bold"></span></div>
+              <div>Итого: <span class="cart__bold"><span class="js-cart-total-price"></span> ₽</span></div>
+            </div>
+            <h3 class="title">Заполните форму</h3>
+            <div class="form__main">
+              <input class="form__input" type="text" name="Имя" placeholder="Имя" required="">
+              <input class="form__input" type="text" name="Телефон" placeholder="Телефон" required="">
+              <input class="form__input" type="text" name="Адрес" placeholder="Адрес" required="">
+              <input class="js-cart-total-price-input" type="hidden" name="Общая сумма">
+              <select class="form__input" name="оплата">
+                <option value="Оплата наличными">Оплата наличными</option>
+                <option value="Оплата картой">Оплата картой</option>
+              </select>
+              <button class="btn form__btn" type="submit">Отправить</button>
+            </div>
+          </form>
+          <div class="cart__empty">
+            <p class="cart__info">Нет товаров</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>
